@@ -1,0 +1,14 @@
+input {
+    width: 96%;
+    padding: 0 2%;
+    height: 45px;
+    outline: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+input[type='submit']{
+    width: 100%;
+    height: 50px;    
+    border: none;
+    cursor: pointer;
+}
