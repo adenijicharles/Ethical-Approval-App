@@ -20,3 +20,27 @@ body{
 .form-group label {
     display: block;
 }
+
+.status_message {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    padding: 1%;
+    font-size: 12px ;
+  }
+  
+  .success {
+    width: 100%;
+    padding: 1%;
+    margin: auto;
+    color: white;
+    background-color: #71dd8a;
+  }
+  
+  .error {
+    width: 100%;
+    padding: 1%;
+    margin: auto;
+    background-color: #c82333;
+    color: white;
+  }
