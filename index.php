@@ -19,7 +19,6 @@
                 <div class="form-group margin-b10">
                     <label> Password </label>
                     <input type="password" id="password" name="password" required>
-                    <span id="pass"> show password </span>
                 </div> 
                 <div class="form-group margin-b10">                            
                     <input type="submit" value="Login">                            
