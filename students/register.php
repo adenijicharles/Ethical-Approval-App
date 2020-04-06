@@ -5,7 +5,7 @@ require_once 'includes/login_header.php';
     <section class="inline-block width-50 align-top">
         <div class="margin-center text-center margin-t60" style="width: 400px">
             <figure>
-                <img src="assets/image/logo.gif">
+                <img src="../assets/image/logo.gif">
             </figure>  
             <?php require_once "includes/status_messages.php"; ?>                  
         </div>       
@@ -35,7 +35,10 @@ require_once 'includes/login_header.php';
                 </div> 
                 <div class="form-group margin-b10">                            
                     <input type="submit" value="Register">                            
-                </div>                                                                             
+                </div>               
+                <div class="form-group margin-b10">                            
+                    Login <a href="index.php">here</a>
+                </div>                                                                                
             </form>
         </div>            
     </section>
