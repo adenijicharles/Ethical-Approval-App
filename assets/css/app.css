@@ -33,16 +33,17 @@ body {
   display: inline-block;
   vertical-align: top;
   background: #FFFFFF;
+
   box-shadow: 10px 10px 30px #E5EBEF;
 }
 
 .stat-box h4 {
-  color: #ADB6C3;
+  color: #333;
   margin-bottom: 10px;
 }
 
 .stat-box h5 {
-  font-size: 17px;
+  font-size: 14px;
   color: #00AEEE;
 }
 
