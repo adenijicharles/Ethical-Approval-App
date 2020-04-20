@@ -6,6 +6,18 @@
     if($_POST){
         catch_empty_values($_POST, '../register.php');
 
+        if (strlen($_POST["student_id"]) < 7) {
+            $_SESSION['error'] = 'Student ID too short, must be at least 7 characters';
+            header('Location: ../../register.php');
+            die();
+        }
+
+        if (strlen($_POST["password"]) < 8) {
+            $_SESSION['error'] = 'Password too short, must be at least 8 characters';
+            header('Location: ../../register.php');
+            die();
+        }
+
         $name = sanitise_string($_POST['full_name']);
         $email = sanitise_string($_POST['email']);
         $student_id = sanitise_string($_POST['student_id']);

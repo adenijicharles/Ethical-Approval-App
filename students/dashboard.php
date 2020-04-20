@@ -17,7 +17,7 @@ include "includes/header.php";
 			<?php foreach($experiments as $experiment){?>
 				<div class="stat-box">
 					<h4> <?php echo $experiment['title']; ?></h4>
-					<h5> <a href="handlers/experiments/delete.php?id=<?php echo $experiment['id']; ?>">Delete</a> - <a href="">Edit</a> </h5>
+					<h5> <a href="handlers/experiments/delete.php?id=<?php echo $experiment['id']; ?>">Delete</a> - <a href="edit-experiment.php?id=<?php echo $experiment['id']; ?>">Edit</a> </h5>
 				</div>
 			<?php }?>									
 		</div>
