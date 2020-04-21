@@ -4,8 +4,6 @@
     require_once "../functions.php";
 
     if($_POST){
-        //catch_empty_values($_POST, '../register.php');
-
         $uploaded_files = [];
         foreach($_FILES['files']['name'] as $key => $val){
             $tmpname  = $_FILES['files']['tmp_name'][$key];
@@ -34,16 +32,16 @@
         $id = sanitise_string($_POST['id']);     
 
 
-        $query = $connection->prepare('INSERT INTO approval_requests (experiment_id, reasons, files) VALUES (:experiment_id, :reasons, :files)');
-        $query->bindParam(':experiment_id', $id);
+        $query = $connection->prepare('UPDATE approval_requests SET reasons = :reasons, files = :files WHERE id = :id');
+        $query->bindParam(':id', $id);
         $query->bindParam(':reasons', $reasons);
         $query->bindParam(':files', $files);
         if($query->execute()){
-            $_SESSION['success'] = 'Approval request submitted successfully';
+            $_SESSION['success'] = 'Approval request edited successfully';
             header('Location: ../../dashboard.php');
         }else{
-            $_SESSION['error'] = 'Unable to submit approval request. Please try again later';
-            header("Location: ../../submit-approval-request.php?id=$experiment_id");
+            $_SESSION['error'] = 'Unable to update approval request. Please try again later';
+            header("Location: ../../edit-approval-request.php?id=$id");
         }
     }
 ?>

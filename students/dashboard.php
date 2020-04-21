@@ -18,7 +18,17 @@ include "includes/header.php";
 				<div class="stat-box">
 					<h4> <?php echo $experiment['title']; ?></h4>
 					<h5> <a href="handlers/experiments/delete.php?id=<?php echo $experiment['id']; ?>">Delete</a> - <a href="edit-experiment.php?id=<?php echo $experiment['id']; ?>">Edit</a> </h5> <hr>
-					<a href="submit-approval-request.php?id=<?php echo $experiment['id']; ?>">submit approval request</a>
+					<?php 
+						$id = $experiment['id'];
+						$sql = $connection->prepare("SELECT * FROM approval_requests WHERE experiment_id = '$id' ORDER BY id DESC");
+						$sql->execute();
+						$count = $sql->rowCount();
+						if($count){
+					?>
+						<a href="edit-approval-request.php?id=<?php echo $experiment['id']; ?>">edit approval request</a>
+					<?php }else{ ?>
+						<a href="submit-approval-request.php?id=<?php echo $experiment['id']; ?>">submit request</a>
+					<?php }?>
 				</div>
 			<?php }?>									
 		</div>

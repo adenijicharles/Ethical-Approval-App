@@ -7,6 +7,11 @@ $query = $connection->prepare('SELECT * FROM experiments WHERE id = :experiment_
 $query->bindParam(':experiment_id', $experiment_id);
 $query->execute();
 $experiments = $query->fetchAll(PDO::FETCH_ASSOC);
+
+$sql = $connection->prepare('SELECT * FROM approval_requests WHERE experiment_id = :experiment_id');
+$sql->bindParam(':experiment_id', $experiment_id);
+$sql->execute();
+$approval = $sql->fetchAll(PDO::FETCH_ASSOC);
 include "includes/header.php";
 ?>
 	<div class="container">
@@ -28,20 +33,22 @@ include "includes/header.php";
                     <?php } ?>
 			</div>		
             <div class="full-width">
-                <form action="handlers/requests/add.php" enctype="multipart/form-data" method="post">
+            <?php foreach($approval as $a){?>
+                <form action="handlers/requests/update.php" enctype="multipart/form-data" method="post">
                     <div class="form-body">
 						<label> Reasons why experiment should be approved </label>
-						<textarea name="reasons" required></textarea>
+						<textarea name="reasons" required><?php echo $a['reasons']?></textarea>
 				 	</div>                
                     <div class="form-body">
 						<label> Upload Documents to back your requests </label>
 						<input type="file" name="files[]" multiple required>
-						<input type="hidden" name="id" value="<?php echo $experiment_id; ?>">
+						<input type="hidden" name="id" value="<?php echo $a['id'] ?>">
 				 	</div>	
 				 	<div class="full-width-small">
-						<input type="submit" value="SUBMIT REQUEST">
+						<input type="submit" value="UPDATE REQUEST">
 				 	</div>	
                 </form>
+            <?php } ?>
             </div>	
 		</div>
 	</div>

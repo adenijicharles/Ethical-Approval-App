@@ -39,9 +39,9 @@
 				<img src="../assets/image/logo.gif">
 			</header>
 			<div class="desktop">
-				<div class="sidebar-link"><a href="#"><i class="fa fa-home"></i> MY EXPERIMENTS </a></div>
+				<div class="sidebar-link"><a href="dashboard.php"><i class="fa fa-home"></i> MY EXPERIMENTS </a></div>
 				<div class="sidebar-link"><a href="#" title="Orders"><i class="fa fa-eyedropper"></i> MY ETHICAL APPROVAL REQUESTS </a></div>		
-				<div class="sidebar-link"><a href="#" title="Logout"><i class="fa fa-sign-out"></i> LOGOUT </a></div>						
+				<div class="sidebar-link"><a href="logout.php" title="Logout"><i class="fa fa-sign-out"></i> LOGOUT </a></div>						
 			</div>
 
 			<div class="mobile" id="mobile" data-left="-201px">
