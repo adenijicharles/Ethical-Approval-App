@@ -4,7 +4,7 @@
     require_once "../functions.php";
 
     if($_POST){
-        catch_empty_values($_POST, '../register.php');
+        catch_empty_values($_POST, '../add-experiment.php');
         $title = sanitise_string($_POST['title']);
         $description = sanitise_string($_POST['description']);        
         $query = $connection->prepare('INSERT INTO experiments (student_id, title, description) VALUES (:student_id, :title, :description)');
