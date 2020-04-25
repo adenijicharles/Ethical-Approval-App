@@ -40,7 +40,8 @@
 			</header>
 			<div class="desktop">
 				<div class="sidebar-link"><a href="dashboard.php"><i class="fa fa-home"></i> MY EXPERIMENTS </a></div>
-				<div class="sidebar-link"><a href="eaos.php" title="Orders"><i class="fa fa-eyedropper"></i> EXPERIMENT APPROVAL OFFICERS </a></div>		
+				<div class="sidebar-link"><a href="eaos.php" title="Orders"><i class="fa fa-eyedropper"></i> EXPERIMENT APPROVAL OFFICERS </a></div>
+				<div class="sidebar-link"><a href="requests.php" title="Orders"><i class="fa fa-eyedropper"></i> APPROVAL REQUESTS </a></div>				
 				<div class="sidebar-link"><a href="logout.php" title="Logout"><i class="fa fa-sign-out"></i> LOGOUT </a></div>						
 			</div>
 

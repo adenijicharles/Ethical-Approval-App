@@ -10,8 +10,7 @@ include "includes/header.php";
 ?>
 	<div class="container">
 		<div class="top-header">
-			Welcome <?php echo $_SESSION['staff']['name']?> <br>
-			MY EXPERIMENTS - <a href="add-experiment.php">add new</a>
+			Welcome <?php echo $_SESSION['staff']['name']?> 
 		</div>
 		<div class="content cf">
 			<?php foreach($experiments as $experiment){?>
