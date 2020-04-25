@@ -8,9 +8,6 @@ $query->bindParam(':experiment_id', $experiment_id);
 $query->execute();
 $experiments = $query->fetchAll(PDO::FETCH_ASSOC);
 
-$query1 = $connection->prepare('SELECT * FROM eaos ORDER BY name ASC');
-$query1->execute();
-$eaos = $query1->fetchAll(PDO::FETCH_ASSOC);
 include "includes/header.php";
 ?>
 	<div class="container">
@@ -44,25 +41,30 @@ include "includes/header.php";
 				 	</div>
 			</div>		
             <div class="full-width">
-                <form action="handlers/requests/assign.php" enctype="multipart/form-data" method="post">
-                    <div class="form-body">
-						<label> <b>Assign Approval Request to Experiment Approval Officers</label>
-						<table>
-							<tr>
-								<td> Select </td>
-								<td> Name </td>
-							</tr>
-							<?php foreach($eaos as $eao){?>
-							<tr>
-								<td> <input type="checkbox" name="eao[]" value="<?php echo $eao['staff_id'];?>"> </td>
-								<td> <?php echo $eao['name'];?> </td>
-							</tr>	
-							<?php }?>						
-						</table>
+                <form action="handlers/requests/send-feedback.php" enctype="multipart/form-data" method="post">
+					<div class="form-body">
+						<label> Feedback </label>
+						<textarea name="feedback" required></textarea>
 				 	</div>                
+                    <div class="form-body">
+						<label> Select Approval Status </label>
+						<select name="status" required>
+							<option value="" selected></option>
+							<option value="1"> Approve </option>
+							<option value="2"> Deny </option>
+						</select>
+						<?php
+							$request_id = $experiment['arid'];
+							$query = $connection->prepare('SELECT * FROM assigned_requests WHERE request_id = :rid');
+							$query->bindParam(':rid', $request_id);
+							$query->execute();
+							$details = $query->fetch(PDO::FETCH_ASSOC);
+						?>
+						<input type="hidden" name="id" value="<?php echo $details['id']; ?>">
+						<input type="hidden" name="exid" value="<?php echo $experiment_id; ?>">
+				 	</div>	
 				 	<div class="full-width-small">
-						 <input type="hidden" name="request_id" value="<?php echo $experiment['arid'];?>">
-						<input type="submit" value="ASSIGN REQUEST">
+						<input type="submit" value="SUBMIT FEEDBACK">
 				 	</div>	
                 </form>
             </div>	

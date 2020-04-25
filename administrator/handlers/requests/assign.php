@@ -12,6 +12,10 @@ if ($_POST) {
         die();
     }
 
+    $query = $connection->prepare('DELETE FROM assigned_requests WHERE request_id = :request_id');
+    $query->bindParam(':request_id', $request_id);
+    $query->execute();
+
     foreach ($eaos as $eao) {
         $query = $connection->prepare('INSERT INTO assigned_requests (request_id, eao_id) VALUES (:request_id, :eao_id)');
         $query->bindParam(':request_id', $request_id);

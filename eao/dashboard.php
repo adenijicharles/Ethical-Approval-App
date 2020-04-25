@@ -19,7 +19,7 @@ include "includes/header.php";
                     <tr>
                         <th> Experiment Title </th>
                         <th> Submitted By </th>
-                        <th> Approval Status</th>
+                        <th> Your Approval Status</th>
                         <th> Actions </th>
                     </tr>
                 </thead>
@@ -30,9 +30,9 @@ include "includes/header.php";
                         <td><?php echo $request['name']; ?></td>
                         <td>
                             <?php 
-                                if ($request['status'] == 1) {
+                                if ($request['feedback_status'] == 1) {
                                     echo 'Approved';
-                                } else if($request['status'] == 2){
+                                } else if($request['feedback_status'] == 2){
                                     echo 'Rejected';
                                 } else {
                                     echo 'Pending';
