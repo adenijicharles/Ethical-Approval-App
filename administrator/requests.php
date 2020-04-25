@@ -20,6 +20,7 @@ include "includes/header.php";
                         <th> Submitted By </th>
                         <th> Approval Status</th>
                         <th> Actions </th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,7 +40,8 @@ include "includes/header.php";
                             
                             ?>
                         </td>
-                        <td><a href='request-details.php?id=<?php echo $request['arid'];?>'>View Details</a></td>
+                        <td><a href='request-details.php?id=<?php echo $request['arid'];?>'>Assign</a></td>
+                        <td><a href='feedback-details.php?id=<?php echo $request['arid'];?>'>view feedbacks by eaos</a></td>
                     </tr>
                     <?php }?>
                 </tbody>
