@@ -40,7 +40,7 @@ include "includes/header.php";
 						<textarea name="reasons" required><?php echo $a['reasons']?></textarea>
 				 	</div>                
                     <div class="form-body">
-						<label> Upload Documents to back your requests </label>
+						<label> Upload Documents to back your requests (All file formats allowed) </label>
 						<input type="file" name="files[]" multiple required>
 						<input type="hidden" name="id" value="<?php echo $a['id'] ?>">
 				 	</div>	

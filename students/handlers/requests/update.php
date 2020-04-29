@@ -14,7 +14,7 @@
             $fileExtension = $pathinfo['extension'];
             $uploadFileDir = '../../../uploads/';
             
-            $allowedfileExtensions = array('jpg', 'gif', 'png', 'txt', 'xls', 'xlsx', 'docx', 'doc');
+            $allowedfileExtensions = array('jpg', 'gif', 'png', 'txt', 'xls', 'xlsx', 'docx', 'doc', 'pdf');
             if (in_array($fileExtension, $allowedfileExtensions)) {
                 $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
                 $destination = $uploadFileDir . $newFileName;

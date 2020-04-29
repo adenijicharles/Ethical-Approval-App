@@ -18,6 +18,4 @@ if ($_POST) {
         $_SESSION['error'] = 'Unable to give feedback. Please try again';
         header("location: ../../feedback-details.php?id=$exid");
     }
-
-
 }
