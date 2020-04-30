@@ -33,7 +33,7 @@
 </head>
 <body>
     <div>
-        <h4> Experiment Approval Application <br> RGU Approvr </h4>
+        <h4> Experiment Ethical Approval Application <br> RGU Approvr </h4>
 
         <p> Click the links to access the application </p>
         <ol>

@@ -2,9 +2,7 @@
 session_start();
 require_once "../../../connection/connection.php";
 require_once "../functions.php";
-// require_once '../../../vendor/autoload.php';
 
-// use Mailgun\Mailgun;
 
 
 if ($_POST) {
@@ -33,6 +31,8 @@ if ($_POST) {
         ";
 
         mail($student_email, 'Experiment Approval Request Feedback', $message);
+
+    
         $_SESSION['success'] = 'Feedback given successfully';
         header("location: ../../feedback-details.php?id=$exid");
     }else{

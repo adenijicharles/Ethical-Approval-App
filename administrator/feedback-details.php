@@ -56,7 +56,17 @@ include "includes/header.php";
                         ?>
                             <b>EXPERIMENT APPROVAL OFFICER: </b><?php echo $eao['name'];?> <br>
                             <b>FEEDBACK: </b><?php echo $eao['feedback'];?><br>
-                            <b>FEEDBACK STATUS: </b><?php echo $eao['feedback_status'] == 1 ? 'Approved' : 'Denied';?><br>
+							<b>FEEDBACK STATUS: </b><?php 
+								if(is_null($eao['feedback_status'])){
+									echo 'Pending';
+								}else if($eao['feedback_status'] == 1){
+									echo 'Approved';
+								}else if($eao['feedback_status'] == 2){
+									echo 'Denied';
+								}
+								//echo $eao['feedback_status'] == 1 ? 'Approved' : 'Denied';
+							
+							?><br>
                             <hr>
                         <?php } ?>
 						

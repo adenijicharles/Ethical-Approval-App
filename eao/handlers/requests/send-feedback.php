@@ -9,9 +9,10 @@ if ($_POST) {
     $id = $_POST['id'];
     $exid = $_POST['exid'];
 
-    $query = $connection->prepare('UPDATE assigned_requests SET feedback = :feedback, feedback_status = :status WHERE id = :id');
+    $query = $connection->prepare('UPDATE assigned_requests SET feedback = :feedback, feedback_status = :status WHERE request_id = :id AND eao_id = :eao');
     $query->bindParam(':feedback', $feedback);
     $query->bindParam(':status', $status);
+    $query->bindParam(':eao', $_SESSION['eao']['staff_id']);
     $query->bindParam(':id', $id);
     if($query->execute()){
         $_SESSION['success'] = 'Feedback given successfully';
