@@ -37,9 +37,9 @@
 
         <p> Click the links to access the application </p>
         <ol>
-            <li><a href='/students' target="_blank"> Student </a></li>
-            <li><a href='/eao' target="_blank"> Experiment Approval Officer </a></li>
-            <li><a href='/administrator' target="_blank"> Administrator </a></li>
+            <li><a href='students' target="_blank"> Student </a></li>
+            <li><a href='eao' target="_blank"> Experiment Approval Officer </a></li>
+            <li><a href='administrator' target="_blank"> Administrator </a></li>
         </ol>
     </div>
 </body>
