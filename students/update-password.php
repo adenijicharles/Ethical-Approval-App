@@ -11,27 +11,27 @@ require_once 'includes/login_header.php';
         </div>       
         <div class="width-100 margin-t30 text-center">
             <h3 class="font-bold"> <b>EXPERIMENT ETHICAL APPROVER</b> </h3>
-            <h5 class="font-bold"> <b>STUDENT LOGIN</b> </h5>
+            <h5 class="font-bold"> <b>STUDENT PASSWORD UPDATE</b> </h5>
         </div>     
         
         <div class="account-form margin-center">
-            <form action="handlers/authentication/login.php" method="post">
-                <div class="form-group margin-b10">
-                    <label> Student ID or Email Address </label>
-                    <input type="text" name="username" required>
-                </div>                 
+            <form action="handlers/authentication/update-password.php" method="post">
                 <div class="form-group margin-b10">
                     <label> Password </label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" name="password" required>
+                </div>                 
+                <div class="form-group margin-b10">
+                    <label> Confirm Password </label>
+                    <input type="password" id="password" name="confirm_password" required>
                 </div> 
                 <div class="form-group margin-b10">                            
-                    <input type="submit" value="Login">                            
+                    <input type="submit" value="Update Password">                            
                 </div> 
                 <div class="form-group margin-b10">                            
                     Register <a href="register.php">here</a>
                 </div>    
                 <div class="form-group margin-b10">                            
-                    Reset Password <a href="reset.php">here</a>
+                    Login <a href="index.php">here</a>
                 </div>                                                                                                             
             </form>
         </div>            
