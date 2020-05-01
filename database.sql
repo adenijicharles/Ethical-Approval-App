@@ -15,6 +15,8 @@ Date: 2020-04-30 21:19:17
 
 SET FOREIGN_KEY_CHECKS=0;
 
+CREATE DATABASE approvr;
+
 -- ----------------------------
 -- Table structure for administrators
 -- ----------------------------
